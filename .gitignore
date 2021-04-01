@@ -1,0 +1,25 @@
+renaissance/node_modules
+
+Backend/config.env
+
+
+
+renaissance//.pnp
+renaissance/.pnp.js
+
+# testing
+renaissance/coverage
+
+# production
+renaissance/build
+
+# misc
+renaissance/.DS_Store
+renaissance/.env.local
+renaissance/.env.development.local
+renaissance/.env.test.local
+renaissance/.env.production.local
+
+renaissance/npm-debug.log*
+renaissance/yarn-debug.log*
+renaissance/yarn-error.log*
