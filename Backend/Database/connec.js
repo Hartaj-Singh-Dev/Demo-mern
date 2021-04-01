@@ -1,6 +1,19 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
+const mongoose = require('mongoose');
+const validator = require('validator');
 
-mongoose.connect(
-  "mongodb+srv://HartajSingh:PBX1_151502@cluster0.eqlqx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-);
+const DB = process.env.DATABASE;
+
+mongoose.connect(DB ,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
+    }
+  )
+  .then(() => {
+    console.log("Connection is maded with remote databse 🚀");
+  })
+  .catch((err) => {
+    console.log(err);
+  });

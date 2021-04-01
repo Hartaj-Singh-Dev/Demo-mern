@@ -1,30 +1,12 @@
 const express = require("express");
 const dotenv = require('dotenv');
 const app = express();
-const mongoose = require("mongoose");
-const validator = require("validator");
-
-
-const port = process.env.PORT;
+require("./Database/connec")
 
 dotenv.config({path:"./config.env"})
+const port = process.env.PORT;
 
-const DB = process.env.DATABASE;
 
-mongoose.connect(DB ,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    }
-  )
-  .then(() => {
-    console.log("Connection is maded with remote databse 🚀");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 
 
