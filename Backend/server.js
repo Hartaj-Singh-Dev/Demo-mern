@@ -1,18 +1,21 @@
 const express = require("express");
 const dotenv = require('dotenv');
 const app = express();
-require("./Database/connec")
 
-dotenv.config({path:"./config.env"})
+dotenv.config({path:'config.env'})
 const port = process.env.PORT;
 
+require("./Database/connec")
+const User = require("./models/userSchema")
+
+//middleware
+app.use(express.json())
+app.use(require('./Routes/route'))
 
 
 
+//middleware
 
-app.get("/", (req, res) => {
-  res.send("Congralutions You are on Home page 🚀");
-});
 
 app.get("/about", (req, res) => {
   res.send("Congralutions You are on About Page 🚀");

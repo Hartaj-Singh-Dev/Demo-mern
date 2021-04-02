@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
-const validator = require('validator');
 
-const DB = process.env.DATABASE;
 
-mongoose.connect(DB ,
+
+const DB = process.env.DATABASE
+
+mongoose.connect(DB,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -17,3 +18,4 @@ mongoose.connect(DB ,
   .catch((err) => {
     console.log(err);
   });
+
